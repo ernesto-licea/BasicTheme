@@ -22,13 +22,19 @@ module.exports = function (app) {
 	app.get('/basic/grid/content', require('./basic/grid.js').content);
 	app.get('/basic/grid/form', require('./basic/grid.js').form);
 
+	app.get('/basic/charts/charts', require('./basic/charts.js').charts);
+
 	app.get('/basic/images/icons', require('./basic/images.js').icons);
+
+	app.get('/basic/widgets/progressbar', require('./basic/widgets.js').progressbar);
+	app.get('/basic/widgets/conversations', require('./basic/widgets.js').conversations);
 
 	/*
 	 Forms.
 	 */
 	app.get('/forms', require('./forms/basic.js').index);
 	app.get('/forms/basic', require('./forms/basic.js').index);
+	app.get('/forms/advanced', require('./forms/advanced.js').index);
 
 	app.get('/forms/styles/horizontal', require('./forms/styles.js').horizontal);
 	app.get('/forms/styles/vertical', require('./forms/styles.js').vertical);

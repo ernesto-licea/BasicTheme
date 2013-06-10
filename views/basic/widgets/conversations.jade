@@ -1,0 +1,169 @@
+extends ../../layouts/layout
+
+block sidebar
+	include ../layouts/sidebar
+
+block content
+		h2.border-bottom-double Page Title
+			br
+			span.description Page description goes here.
+
+		.row-fluid
+			.span6.box
+				.box-header
+					h3 Classic
+				.box-content
+					ul.conversation.chat-classic
+						li.isuser
+							.username Juliet:
+							.datetime 03:11:32 PM
+							.body
+								p
+									| Romeo, Romeo, wherefore art thou Romeo?
+									br
+									| Deny thy father and refuse thy name;
+									br
+									| Or if thou wilt not, be but sworn my love
+									br
+									| And I'll no longer be a Capulet.
+
+						li.notuser
+							.username Romeo:
+							.datetime 03:11:32 PM
+							.body Shall I hear more, or shall I speak at this?
+
+						li.system
+							.datetime 03:12:00 PM
+							.body - Juliet has disconnected
+
+					.conversation-actionbar
+						.row-fluid
+							.span8
+								input.span12(type="text",placeholder="Type your message here...")
+							.span2
+								button.span12.btn.btn-primary Send
+							.span2
+								button.span12.btn.btn-danger Cancel
+
+			.span6.box
+				.box-header
+					h3 Boxed
+				.box-content
+					ul.conversation.chat-boxed
+						li.isuser.box
+							.header.box-header
+								.icon
+									img(src="/images/icons/famfamfam-silk-icons/icons/user_female.png")
+								.username Juliet
+								.datetime 03:11:32 PM
+								.clearfix
+							.body.box-content
+								p
+									| Romeo, Romeo, wherefore art thou Romeo?
+									br
+									| Deny thy father and refuse thy name;
+									br
+									| Or if thou wilt not, be but sworn my love
+									br
+									| And I'll no longer be a Capulet.
+
+						li.notuser.box
+							.header.box-header
+								.icon
+									img(src="/images/icons/famfamfam-silk-icons/icons/user.png")
+								.username Romeo
+								.datetime 03:11:32 PM
+								.clearfix
+							.body.box-content Shall I hear more, or shall I speak at this?
+
+						li.system.box
+							.datetime 03:12:00 PM
+							.body - Juliet has disconnected
+
+					.conversation-actionbar
+						.row-fluid
+							.span8
+								input.span12(type="text",placeholder="Type your message here...")
+							.span2
+								button.span12.btn.btn-primary Send
+							.span2
+								button.span12.btn.btn-danger Cancel
+
+		.row-fluid
+			.span6.box
+				.box-header
+					h3 Bubbles
+				.box-content
+					ul.conversation.chat-bubbled
+						li.isuser
+							.icon
+								img(src="/images/icons/person.svg")
+
+							.message
+								.header
+									.username Juliet
+									.datetime 03:11:32 PM
+									.clearfix
+								.body
+									p
+										| Romeo, Romeo, wherefore art thou Romeo?
+										br
+										| Deny thy father and refuse thy name;
+										br
+										| Or if thou wilt not, be but sworn my love
+										br
+										| And I'll no longer be a Capulet.
+
+						li.notuser
+							.icon
+								img(src="/images/icons/person.svg")
+
+							.message
+								.header
+									.username Romeo
+									.datetime 03:11:32 PM
+									.clearfix
+								.body Shall I hear more, or shall I speak at this?
+
+						li.system
+							.datetime 03:12:00 PM
+							.body - Juliet has disconnected
+
+			.span6.box
+				.box-header
+					h3 Interleaved Bubbles
+				.box-content
+					ul.conversation.chat-bubbled.chat-interleaved
+						li.isuser
+							.icon
+								img(src="/images/icons/person.svg")
+
+							.message
+								.header
+									.username Juliet
+									.datetime 03:11:32 PM
+									.clearfix
+								.body
+									p
+										| Romeo, Romeo, wherefore art thou Romeo?
+										br
+										| Deny thy father and refuse thy name;
+										br
+										| Or if thou wilt not, be but sworn my love
+										br
+										| And I'll no longer be a Capulet.
+
+						li.notuser
+							.icon
+								img(src="/images/icons/person.svg")
+
+							.message
+								.header
+									.username Romeo
+									.datetime 03:11:32 PM
+									.clearfix
+								.body Shall I hear more, or shall I speak at this?
+
+						li.system
+							.datetime 03:12:00 PM
+							.body - Juliet has disconnected

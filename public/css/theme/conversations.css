@@ -1,0 +1,229 @@
+/* =Conversations.
+ -------------------------------------------------------------- */
+.conversation {
+	margin : 0;
+}
+
+.conversation > li {
+	list-style-type : none;
+	margin-bottom   : 1em;
+}
+
+.conversation > li:last-of-type {
+	margin-bottom : 0;
+}
+
+.conversation-actionbar {
+	background-color           : #f7f0b1;
+	border-top                 : 1px solid #dc9a00 !important;
+	border-bottom-right-radius : 4px;
+	border-bottom-left-radius  : 4px;
+	margin-top                 : 1em;
+	padding                    : 1em;
+}
+
+.conversation-actionbar input {
+	margin : 0;
+}
+
+/* =Conversations. Chat Classic.
+ -------------------------------------------------------------- */
+.conversation.chat-classic > li.notuser .username,
+.conversation.chat-classic > li.notuser .datetime {
+	color : #2e8b57;
+}
+
+.conversation.chat-classic > li .username {
+	font-weight : bold;
+	float       : left;
+	width       : 4.5em;
+}
+
+.conversation.chat-classic > li.isuser .username,
+.conversation.chat-classic > li.isuser .datetime {
+	color : #8b2323;
+}
+
+.conversation.chat-classic > li .datetime {
+	float : right;
+}
+
+.conversation.chat-classic > li .body p {
+	margin-left : 4.5em;
+}
+
+.conversation.chat-classic > li.system .datetime,
+.conversation.chat-classic > li.system .body {
+	color : #939373;
+}
+
+/* =Conversations. Chat Boxed.
+ -------------------------------------------------------------- */
+.conversation.chat-boxed > li .header {
+	padding: 0.4em;
+}
+.conversation.chat-boxed > li .header .icon {
+	float          : left;
+	margin-right   : 0.5em;
+	vertical-align : text-top;
+}
+
+.conversation.chat-boxed > li .username {
+	font-weight : bold;
+	float       : left;
+	width       : 4.5em;
+}
+
+.conversation.chat-boxed > li.notuser .username,
+.conversation.chat-boxed > li.notuser .datetime {
+	color : #2e8b57;
+}
+
+.conversation.chat-boxed > li.isuser .username,
+.conversation.chat-boxed > li.isuser .datetime {
+	color : #8b2323;
+}
+
+.conversation.chat-boxed > li .datetime {
+	float      : right;
+	font-style : italic;
+}
+
+.conversation.chat-boxed > li.system {
+	border        : 1px solid #aaaaaa;
+	border-radius : 4px;
+}
+
+.conversation.chat-boxed > li.system .body {
+	border-radius : 4px;
+}
+
+.conversation.chat-boxed > li.system .datetime {
+	border-left                : 1px solid #aaaaaa;
+	border-top-right-radius    : 4px;
+	border-bottom-right-radius : 4px;
+}
+
+.conversation.chat-boxed > li.system .datetime,
+.conversation.chat-boxed > li.system .body {
+	color            : #939373;
+	padding          : 0.4em;
+	background-image : linear-gradient(to bottom, #ffffff, #e7ebef);
+}
+
+/* =Conversations. Chat Bubbled.
+ -------------------------------------------------------------- */
+.conversation.chat-bubbled > li {
+	position: relative;
+}
+.conversation.chat-bubbled > li .clearfix {
+	height: 1.5em;
+}
+.conversation.chat-bubbled > li .icon {
+	float          : left;
+	margin-right   : 0.5em;
+	vertical-align : text-top;
+}
+
+.conversation.chat-bubbled > li .username {
+	float : left;
+	width : 4.5em;
+}
+
+.conversation.chat-bubbled > li .message {
+	box-shadow    : 0 1px 8px 0 #b5b5b5;
+	border-radius : 8px;
+	font-size: inherit;
+	margin-left   : 5em;
+	padding       : 0.5em 1.5em;
+}
+
+.conversation.chat-bubbled > li.isuser .message {
+	background-image : linear-gradient(to bottom, #fcfcf3, #f8f7de);
+	border           : 1px solid #e7e391;
+}
+.conversation.chat-bubbled > li.isuser .message:before {
+	background: url("/images/backgrounds/yellow-arrow.png") no-repeat scroll 0 0 transparent;
+	content: "";
+	display: block;
+	height: 13px;
+	left: 4.15em;
+	position: absolute;
+	top: 0.5em;
+	width: 13px;
+}
+.conversation.chat-bubbled > li.notuser .message:before {
+	background: url("/images/backgrounds/green-arrow.png") no-repeat scroll 0 0 transparent;
+	content: "";
+	display: block;
+	height: 13px;
+	left: 4.15em;
+	position: absolute;
+	top: 0.5em;
+	width: 13px;
+}
+.conversation.chat-bubbled > li.notuser .message {
+	background-image : linear-gradient(to bottom, #fafdf4, #eef7da);
+	border           : 1px solid #bcda7d;
+}
+
+.conversation.chat-bubbled > li.notuser .username,
+.conversation.chat-bubbled > li.notuser .datetime {
+	color : #9ecf36;
+}
+
+.conversation.chat-bubbled > li.isuser .username,
+.conversation.chat-bubbled > li.isuser .datetime {
+	color : #e6c514;
+}
+
+.conversation.chat-bubbled > li .datetime {
+	float : right;
+}
+
+.conversation.chat-bubbled > li.system {
+	box-shadow    : 0 1px 8px 0 #b5b5b5;
+	border        : 1px solid #aaaaaa;
+	border-radius : 8px;
+}
+
+.conversation.chat-bubbled > li.system .body {
+	border-radius : 10px;
+}
+
+.conversation.chat-bubbled > li.system .datetime {
+	border-top-right-radius    : 10px;
+	border-bottom-right-radius : 10px;
+}
+
+.conversation.chat-bubbled > li.system .datetime,
+.conversation.chat-bubbled > li.system .body {
+	color            : #939373;
+	padding          : 0.4em;
+	background-image : linear-gradient(to bottom, #ffffff, #e7ebef);
+}
+
+/* =Conversations. Chat Bubbled. Interleaved
+ -------------------------------------------------------------- */
+.conversation.chat-bubbled.chat-interleaved > li:nth-child(2n) .icon {
+	float          : right;
+	margin-left   : 0.5em;
+	margin-right   : 0.5em;
+	vertical-align : text-top;
+}
+.conversation.chat-bubbled.chat-interleaved > li:nth-child(2n) .message {
+	margin-right   : 5em;
+	margin-left: 0;
+}
+.conversation.chat-bubbled.chat-interleaved > li:nth-child(2n).notuser .message:before {
+	background: url("/images/backgrounds/green-arrow-inverted.png") no-repeat scroll 0 0 transparent;
+	right: 4.15em;
+	left: auto;
+	top: 0.5em;
+}
+.conversation.chat-bubbled.chat-interleaved > li:nth-child(2n).isuser .message:before {
+	background: url("/images/backgrounds/yellow-arrow-inverted.png") no-repeat scroll 0 0 transparent;
+	right: 4.15em;
+	left: auto;
+	top: 0.5em;
+}

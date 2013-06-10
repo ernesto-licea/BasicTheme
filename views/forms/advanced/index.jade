@@ -1,0 +1,308 @@
+extends ../../layouts/layout
+
+block styles
+	link(rel="stylesheet",href="/js/vendor/pixelmatrix-uniform/themes/default/css/uniform.default.min.css",media="screen")
+	link(rel="stylesheet",href="/js/vendor/bootstrap-daterangepicker/daterangepicker.css",media="screen")
+	link(rel="stylesheet",href="/js/vendor/colorpicker/css/colorpicker.css",media="screen")
+	link(rel="stylesheet",href="/js/vendor/datepicker/css/datepicker.css",media="screen")
+	link(rel="stylesheet",href="/js/vendor/timepicker/bootstrap-timepicker.min.css",media="screen")
+	link(rel="stylesheet",href="/js/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css",media="screen")
+
+block sidebar
+	include ../layouts/sidebar
+
+block content
+	.content-header
+		.content-header-title
+			h2 Tabs
+			span.description A single example shown as it might be displayed across multiple pages.
+
+	h2 Pickers
+	.row-fluid
+		.span12
+			form.form-horizontal(action='#')
+				legend Colorpicker
+				.row-fluid
+					.span4.form-control-label
+						label(for='text') Attached to a field with hex format.
+					.span8.form-controls
+						input.colorpicker(type="text",value="#8fff00")
+
+				.row-fluid
+					.span4.form-control-label
+						label(for='text') Attached to a field with the rgba format specified via data tag.
+					.span8.form-controls
+						input.colorpicker(type="text",value="rgb(0,194,255,0.78)",data-color-format="rgba")
+
+				.row-fluid
+					.span4.form-control-label
+						label(for='text') As component
+					.span8.form-controls
+						.input-append.color.colorpicker(data-color="rgb(255, 146, 180)",data-color-format="rgb",readonly="readonly")
+							input(type="text",value="")
+							span.add-on
+								i(style="background-color: rgb(255, 146, 180)")
+
+	.row-fluid
+		.span12
+			form.form-horizontal(action='#')
+				legend Timepicker
+				.row-fluid
+					.span4.form-control-label
+						label(for='text') As component
+					.span8.form-controls
+						.input-append.bootstrap-timepicker
+							input.timepicker.input-small(type="text")
+							span.add-on
+								i.icon-time
+
+				.row-fluid
+					.span4.form-control-label
+						label(for='text') Without component markup
+					.span8.form-controls
+						.bootstrap-timepicker
+							input.timepicker.input-small(type="text")
+							i.icon-time(style="margin: -2px 0 0 -19px; pointer-events: none; position: relative;")
+
+	.row-fluid
+		.span12
+			form.form-horizontal(action='#')
+				legend Datepicker
+				.row-fluid
+					.span4.form-control-label
+						label(for='text') Attached to a field with the format specified via data tag
+					.span8.form-controls
+						input.datepicker(type="text",value="02/16/12",data-date-format="mm/dd/yy")
+
+				.row-fluid
+					.span4.form-control-label
+						label(for='text') As component
+					.span8.form-controls
+						.input-append.date.datepicker(data-date="12-02-2012",ata-date-format="dd-mm-yyyy")
+							input(size="16",type="text",value="12-02-2012",readonly="readonly")
+							span.add-on
+								i.icon-calendar
+
+				.row-fluid
+					.span4.form-control-label
+						label(for='text') Start with years viewMode
+					.span8.form-controls
+						.input-append.date.datepicker(data-date="12-02-2012",data-date-format="dd-mm-yyyy",data-date-viewmode="years")
+							input(size="16",type="text",value="12-02-2012",readonly="readonly")
+							span.add-on
+								i.icon-calendar
+
+				.row-fluid
+					.span4.form-control-label
+						label(for='text') Limit the view mode to months
+					.span8.form-controls
+						.input-append.date.datepicker(data-date="102/2012",data-date-format="mm/yyyy",data-date-viewmode="years",data-date-minviewmode="months")
+							input(size="16",type="text",value="02/2012",readonly="readonly")
+							span.add-on
+								i.icon-calendar
+
+	.row-fluid
+		.span12
+			form.form-horizontal(action='#')
+				legend Daterange Picker
+				.row-fluid
+					.span4.form-control-label
+						label(for='text') Simple
+					.span8.form-controls
+						.input-append
+							input#daterangepicker-simple(type="text",name="reservation",value="03/18/2013 - 03/23/2013")
+							span.add-on
+								i.icon-calendar
+
+				.row-fluid
+					.span4.form-control-label
+						label(for='text') Options Usage
+					.span8.form-controls
+						.span4#daterangepicker-reportrange(style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc")
+							i.icon-calendar
+							| &nbsp;&nbsp;
+							span June 5, 2013 - June 5, 2013
+							b.pull-right.caret(style="margin-top: 8px")
+
+				.row-fluid
+					.span4.form-control-label
+						label(for='text') Month/Year Dropdowns
+					.span8.form-controls
+						.input-append
+							input#daterangepicker-dropdown(type="text")
+							span.add-on
+								i.icon-calendar
+
+				.row-fluid
+					.span4.form-control-label
+						label(for='text') Range Limit
+					.span8.form-controls
+						.input-append
+							input#daterangepicker-range(type="text")
+							span.add-on
+								i.icon-calendar
+
+	.row-fluid
+		.span12
+			form.form-horizontal(action='#')
+				legend Datetime Picker
+				.row-fluid
+					.span4.form-control-label
+						label(for='text') Default
+					.span8.form-controls
+						.datetimepicker.input-append.date
+							input(data-format="dd/MM/yyyy hh:mm:ss",type="text")
+							span.add-on
+								i(data-time-icon="icon-time",data-date-icon="icon-calendar")
+
+				.row-fluid
+					.span4.form-control-label
+						label(for='text') AM/PM Format
+					.span8.form-controls
+						.datetimepicker.datetimepicker-ampm.input-append
+							input(data-format="MM/dd/yyyy HH:mm:ss PP",type="text")
+							span.add-on
+								i(data-time-icon="icon-time",data-date-icon="icon-calendar")
+
+				.row-fluid
+					.span4.form-control-label
+						label(for='text') Only Datepicker
+					.span8.form-controls
+						.datetimepicker-onlydatepicker.input-append
+							input(data-format="MM/dd/yyyy HH:mm:ss PP",type="text")
+							span.add-on
+								i(data-time-icon="icon-time",data-date-icon="icon-calendar")
+
+				.row-fluid
+					.span4.form-control-label
+						label(for='text') Only Timepicker
+					.span8.form-controls
+						.datetimepicker-onlytimepicker.input-append
+							input(data-format="hh:mm:ss",type="text")
+							span.add-on
+								i(data-time-icon="icon-time",data-date-icon="icon-calendar")
+
+	h2 Star ratings
+	.row-fluid
+		.span4.box
+			.box-header
+				h3 Default
+			.box-content
+				.star-rating
+
+		.span4.box
+			.box-header
+				h3 Score
+			.box-content
+				.star-rating(data-score="3")
+
+		.span4.box
+			.box-header
+				h3 Number
+			.box-content
+				.star-rating(data-score="6",data-number="10")
+
+	.row-fluid
+		.span4.box
+			.box-header
+				h3 Read Only
+			.box-content
+				.star-rating(data-score="3",data-readonly="true")
+
+		.span4.box
+			.box-header
+				h3 Half
+			.box-content
+				.star-rating(data-score="2.5",data-half="true")
+
+		.span4.box
+			.box-header
+				h3 Cancel
+			.box-content
+				.star-rating(data-cancel="true")
+
+	h2 Knobs
+	.row-fluid
+		.span4.box
+			.box-header
+				h3 Disabled display input
+			.box-content.align-center
+				input.knob(data-width="100",data-displayInput="false",value="35")
+
+		.span4.box
+			.box-header
+				h3 Cursor mode
+			.box-content.align-center
+				input.knob(data-width="150",data-cursor="true",data-fgColor="#222222",data-thickness=".3",value="29")
+
+		.span4.box
+			.box-header
+				h3 Display previous value
+			.box-content.align-center
+				input.knob(data-width="200",data-min="-100",data-displayPrevious="true",value="44")
+
+	.row-fluid
+		.span4.box
+			.box-header
+				h3 Angle offset
+			.box-content.align-center
+				input.knob(data-angleOffset="90",data-linecap="round",value="35")
+
+		.span4.box
+			.box-header
+				h3 Angle offset and arc
+			.box-content.align-center
+				input.knob(data-angleOffset="-125",data-angleArc="250",data-fgColor="#66EE66",value="35")
+
+		.span4.box
+			.box-header
+				h3 5-digit values, step 1000
+			.box-content.align-center
+				input.knob(data-min="-15000",data-displayPrevious="true",data-max="15000",data-step="1000",value="-11000")
+
+	.row-fluid
+		.span6.box
+			.box-header
+				h3 Overloaded draw method with Tron skin
+			.box-content.align-center.bg-inverse
+				input.knob(data-thickness=".2",value="75",data-cursor="true",data-skin="tron",data-fgcolor="#ffec03",data-displayprevious="true",data-width="75")
+				input.knob(value="75",data-thickness=".2",data-skin="tron",data-fgcolor="#ffec03",data-displayprevious="true",data-width="150")
+				input.knob(value="35",data-thickness=".1",data-skin="tron",data-fgcolor="#C0ffff",data-angleoffset="180",data-width="150")
+
+		.span6.box
+			.box-header
+				h3 Superpose (clock)
+			.box-content.align-center.bg-inverse(style="height:23em;")
+				div(style="position:relative;width:350px;margin:auto")
+					div(style="position:absolute;left:10px;top:10px")
+						input.knob.hour(data-min="0",data-max="24",data-bgColor="#333",data-fgColor="#ffec03",data-displayInput="false",data-width="300",data-height="300",data-thickness=".3")
+					div(style="position:absolute;left:60px;top:60px")
+						input.knob.minute(data-min="0",data-max="60",data-bgColor="#333",data-displayInput="false",data-width="200",data-height="200",data-thickness=".45")
+					div(style="position:absolute;left:110px;top:110px")
+						input.knob.second(data-min="0",data-max="60",data-bgColor="#333",data-fgColor="rgb(127, 255, 0)",data-displayInput="false",data-width="100",data-height="100",data-thickness=".3")
+
+	.row-fluid
+		.span4.box
+			.box-header
+				h3 Readonly
+			.box-content.align-center
+				input.knob(value="22",data-readonly="true",data-thickness=".4",data-fgcolor="chartreuse",disabled="disabled")
+
+		.span4.box
+			.box-header
+				h3 Infinite || iPod click wheel
+			.box-content.align-center.bg-inverse
+				input.knob-infinite(data-cursor="true",data-displayinput="false",data-bgcolor="#FFFFFF",data-fgcolor="#AAAAAA",data-thickness=".5",data-width="150")
+				div(style="float:right;margin-top:3em;margin-left:-15em")
+					div.ival(style="width:80px;text-align:center;font-size:50px;color:#AAA") 9
+					div.idir(style="width: 80px; text-align: center; font-size: 50px; display: none;") -
+
+block scripts
+	script(src="/js/vendor/bootstrap-daterangepicker/moment.min.js")
+	script(src="/js/vendor/bootstrap-daterangepicker/daterangepicker.js")
+	script(src="/js/vendor/jQuery-Knob/jquery.knob.js")
+	script(src="/js/vendor/colorpicker/js/bootstrap-colorpicker.js")
+	script(src="/js/vendor/datepicker/js/bootstrap-datepicker.js")
+	script(src="/js/vendor/timepicker/bootstrap-timepicker.min.js")
+	script(src="/js/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js")
+	script(src="/js/vendor/raty/jquery.raty.min.js")

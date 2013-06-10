@@ -20,7 +20,7 @@
 ul.nav.nav-tabs.nav-stacked
 	li(class=(page == 'basic/index' ?'active':''))
 		a.border-radius-none(href=(page == 'basic/index' ?'#':'/basic'))
-			i.icon-home(class=(page == 'basic/index' ?'icon-white':''))
+			i.icon-dashboard(class=(page == 'basic/index' ?'icon-white':''))
 			| Dashboard
 
 	li(class=(page == 'basic/typography' ?'active':''))
@@ -144,7 +144,7 @@ ul.nav.nav-tabs.nav-stacked
 						i.icon-th-list
 						| Media Grid
 
-	li
+	li(class=(page == 'basic/charts/charts' ?'active':''))
 		.accordion-group.border-radius-none.margin-bottom-none
 			.accordion-heading
 				a.accordion-toggle(data-toggle="collapse",href="#charts")
@@ -152,13 +152,13 @@ ul.nav.nav-tabs.nav-stacked
 					| Charts
 					i.accordion-level.icon-chevron-right.pull-right
 
-			#charts.accordion-body.collapse
+			#charts.accordion-body.collapse(class=(page == 'basic/charts/charts' ?'in':''))
 				a.border-radius-none(href="/basic/charts/statistics")
 					.accordion-inner
 						i.icon-bar-chart
 						| Statistics Elements
 
-				a.border-radius-none(href="/basic/charts/charts")
+				a.border-radius-none(href="/basic/charts/charts",class=(page == 'basic/charts/charts' ?'active':''))
 					.accordion-inner
 						i.icon-bar-chart
 						| Charts
@@ -186,3 +186,22 @@ ul.nav.nav-tabs.nav-stacked
 					.accordion-inner
 						i.icon-th
 						| Gallery
+
+	li(class=(page == 'basic/widgets/progressbar' || page == 'basic/widgets/conversations' ?'active':''))
+		.accordion-group.border-radius-none.margin-bottom-none
+			.accordion-heading
+				a.accordion-toggle(data-toggle="collapse",href="#widgets")
+					i.icon-cogs
+					| Widgets
+					i.accordion-level.icon-chevron-right.pull-right
+
+			#widgets.accordion-body.collapse(class=(page == 'basic/widgets/progressbar' || page == 'basic/widgets/conversations' ?'in':''))
+				a.border-radius-none(href="/basic/widgets/progressbar",class=(page == 'basic/widgets/progressbar' ?'active':''))
+					.accordion-inner
+						i.icon-tasks
+						| Progress bars
+
+				a.border-radius-none(href="/basic/widgets/conversations",class=(page == 'basic/widgets/conversations' ?'active':''))
+					.accordion-inner
+						i.icon-comments
+						| Conversations
