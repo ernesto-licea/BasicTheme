@@ -26,6 +26,8 @@ module.exports = function (app) {
 
 	app.get('/basic/images/icons', require('./basic/images.js').icons);
 
+	app.get('/basic/widgets/boxes', require('./basic/widgets.js').boxes);
+	app.get('/basic/widgets/scrollbar', require('./basic/widgets.js').scrollbar);
 	app.get('/basic/widgets/progressbar', require('./basic/widgets.js').progressbar);
 	app.get('/basic/widgets/conversations', require('./basic/widgets.js').conversations);
 
@@ -44,4 +46,6 @@ module.exports = function (app) {
 	 Standalone Templates.
 	 */
 	app.get('/templates', require('./templates/index.js').index);
+	app.get('/templates/calendar/full', require('./templates/calendar.js').full);
+	app.get('/templates/calendar/boxed', require('./templates/calendar.js').boxed);
 };

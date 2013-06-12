@@ -219,6 +219,85 @@
 	}
 
 	/**
+	 * Slick Scrools.
+	 */
+	if ($.fn.slimscroll) {
+		$('.slickscroll').each(function () {
+			var this$ = $(this),
+				options = {};
+
+			if (this$.attr('data-height')) {
+				options.height = this$.attr('data-height');
+			}
+			if (this$.attr('data-width')) {
+				options.width = this$.attr('data-width');
+			}
+			if (this$.attr('data-size')) {
+				options.size = this$.attr('data-size');
+			}
+			if (this$.attr('data-position')) {
+				options.position = this$.attr('data-position');
+			}
+			if (this$.attr('data-color')) {
+				options.color = this$.attr('data-color');
+			}
+			if (this$.attr('data-alwaysvisible') == 'true' || this$.attr('data-alwaysvisible') == 'TRUE') {
+				options.alwaysVisible = this$.attr('data-alwaysvisible');
+			}
+			if (this$.attr('data-distance')) {
+				options.distance = this$.attr('data-distance');
+			}
+			if (this$.attr('data-opacity')) {
+				options.opacity = this$.attr('data-opacity');
+			}
+			if (this$.attr('data-railvisible') == 'true' || this$.attr('data-railvisible') == 'TRUE') {
+				options.railVisible = this$.attr('data-railvisible');
+			}
+			if (this$.attr('data-railcolor')) {
+				options.railColor = this$.attr('data-railcolor');
+			}
+			if (this$.attr('data-railopacity')) {
+				options.railOpacity = this$.attr('data-railopacity');
+			}
+			if (this$.attr('data-wheelstep')) {
+				options.wheelStep = this$.attr('data-wheelstep');
+			}
+			this$.slimscroll(options);
+		});
+	}
+
+	/**
+	 * Autogrowing textarea.
+	 */
+	if ($.fn.autosize) {
+		$('.autosize').autosize({
+			append: '\n'
+		});
+	}
+
+	/**
+	 * Slick & iPhone checkboxes.
+	 */
+	if ($.fn.iCheckbox) {
+		$('.iCheckbox-slick').iCheckbox({
+			switch_container_src: '/js/vendor/iCheckbox/images/switch-frame.png',
+			class_container: 'slickCheckbox-switcher-container',
+			class_switch: 'slickCheckbox-switch',
+			class_checkbox: 'iCheckbox',
+			switch_speed: 100,
+			switch_swing: -13
+		});
+
+		$('.iCheckbox-iPhone').iCheckbox({
+			switch_container_src: '/js/vendor/iCheckbox/images/iphone_switch_container.gif',
+			class_container: 'iCheckbox-switcher-container',
+			class_switch: 'iCheckbox-switch',
+			class_checkbox: 'iCheckbox',
+			switch_speed: 100
+		});
+	}
+
+	/**
 	 * Notifications
 	 */
 	if ($('.cf-notify').length){

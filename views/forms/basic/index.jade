@@ -3,6 +3,7 @@ extends ../../layouts/layout
 block styles
 	link(rel="stylesheet",href="/js/vendor/pixelmatrix-uniform/themes/default/css/uniform.default.min.css",media="screen")
 	link(rel="stylesheet",href="/js/vendor/chosen/chosen.css",media="screen")
+	link(rel="stylesheet",href="/js/vendor/iCheckbox/css/iCheckbox.css",media="screen")
 
 block sidebar
 	include ../layouts/sidebar
@@ -133,6 +134,12 @@ block content
 						label(for='textareap') Textarea placeholder
 					.form-controls.span8
 						textarea#textareap.span12(placeholder="Textarea field placeholder...",name="textarea")
+
+				.row-fluid
+					.span4.form-control-label
+						label(for='textareap') Autogrowing textarea
+					.form-controls.span8
+						textarea.autosize.span12(placeholder="Textarea field placeholder...",name="textarea")
 
 	.row-fluid
 		.span6
@@ -1000,6 +1007,71 @@ block content
 	.row-fluid
 		.span6
 			form.form-horizontal(action='#')
+				legend Slick Checkboxes
+				.row-fluid
+					.span4.form-control-label
+						label(for='radio1') Checkboxes
+					.form-controls.span8
+						label.checkbox.inline
+							input.iCheckbox-slick(name="optionsCheckboxes1",value="option1",type="checkbox")
+							|Option 1
+						label.checkbox.inline
+							input.iCheckbox-slick(name="optionsCheckboxes2",value="option1",type="checkbox", checked="checked")
+							|Option 2
+						label.checkbox.inline
+							input.iCheckbox-slick(name="optionsCheckboxes3",value="option2",type="checkbox")
+							|Option 3
+
+				.row-fluid
+					.span4.form-control-label
+						label(for='radio1') Checkboxes
+					.form-controls.span8
+						label.checkbox
+							input.iCheckbox-slick(name="optionsCheckboxes1",value="option1",type="checkbox")
+							|Option 1
+						label.checkbox
+							input.iCheckbox-slick(name="optionsCheckboxes2",value="option1",type="checkbox", checked="checked")
+							|Option 2
+
+						label.checkbox
+							input.iCheckbox-slick(name="optionsCheckboxes3",value="option2",type="checkbox")
+							|Option 3
+
+		.span6
+			form.form-horizontal(action='#')
+				legend iPhone Checkboxes
+				.row-fluid
+					.span4.form-control-label
+						label(for='radio1') Checkboxes
+					.form-controls.span8
+						label.checkbox.inline
+							input.iCheckbox-iPhone(name="optionsCheckboxes1",value="option1",type="checkbox")
+							|Option 1
+						label.checkbox.inline
+							input.iCheckbox-iPhone(name="optionsCheckboxes2",value="option1",type="checkbox", checked="checked")
+							|Option 2
+						label.checkbox.inline
+							input.iCheckbox-iPhone(name="optionsCheckboxes3",value="option2",type="checkbox")
+							|Option 3
+
+				.row-fluid
+					.span4.form-control-label
+						label(for='radio1') Checkboxes
+					.form-controls.span8
+						label.checkbox
+							input.iCheckbox-iPhone(name="optionsCheckboxes1",value="option1",type="checkbox")
+							|Option 1
+						label.checkbox
+							input.iCheckbox-iPhone(name="optionsCheckboxes2",value="option1",type="checkbox", checked="checked")
+							|Option 2
+
+						label.checkbox
+							input.iCheckbox-iPhone(name="optionsCheckboxes3",value="option2",type="checkbox")
+							|Option 3
+
+	.row-fluid
+		.span6
+			form.form-horizontal(action='#')
 				legend Native File input
 				.row-fluid
 					.span4.form-control-label
@@ -1024,6 +1096,9 @@ block content
 		.span6
 			.box
 				.box-header
+					.actions
+						i.control-drop.icon-chevron-up.tip(title="Minimize / Maximize Box", data-toggle="tooltip")
+						i.control-remove.icon-remove.tip(title="Remove Box", data-toggle="tooltip")
 					h3 Default buttons
 				.box-content
 					button.btn Default
@@ -1037,6 +1112,9 @@ block content
 
 			.box
 				.box-header
+					.actions
+						i.control-drop.icon-chevron-up.tip(title="Minimize / Maximize Box", data-toggle="tooltip")
+						i.control-remove.icon-remove.tip(title="Remove Box", data-toggle="tooltip")
 					h3 Disabled state
 				.box-content
 					a.btn.btn-large.btn-primary.disabled(href="#") Primary link
@@ -1045,6 +1123,9 @@ block content
 
 		.span6.box
 			.box-header
+				.actions
+					i.control-drop.icon-chevron-up.tip(title="Minimize / Maximize Box", data-toggle="tooltip")
+					i.control-remove.icon-remove.tip(title="Remove Box", data-toggle="tooltip")
 				h3 Button sizes
 			.box-content
 				p
@@ -1071,6 +1152,9 @@ block content
 		.span6
 			.box
 				.box-header
+					.actions
+						i.control-drop.icon-chevron-up.tip(title="Minimize / Maximize Box", data-toggle="tooltip")
+						i.control-remove.icon-remove.tip(title="Remove Box", data-toggle="tooltip")
 					h3 Block level buttons
 				.box-content
 					button.btn.btn-large.btn-block.btn-primary(type="button") Block level button
@@ -1078,6 +1162,9 @@ block content
 
 			.box
 				.box-header
+					.actions
+						i.control-drop.icon-chevron-up.tip(title="Minimize / Maximize Box", data-toggle="tooltip")
+						i.control-remove.icon-remove.tip(title="Remove Box", data-toggle="tooltip")
 					h3 Search form
 				.box-content
 					form.form-search.align-center
@@ -1093,6 +1180,9 @@ block content
 
 		.span6.box
 			.box-header
+				.actions
+					i.control-drop.icon-chevron-up.tip(title="Minimize / Maximize Box", data-toggle="tooltip")
+					i.control-remove.icon-remove.tip(title="Remove Box", data-toggle="tooltip")
 				h3 Action buttons
 			.box-content
 				.input-append
@@ -1215,3 +1305,5 @@ block content
 block scripts
 	script(src="/js/vendor/pixelmatrix-uniform/jquery.uniform.min.js")
 	script(src="/js/vendor/chosen/chosen.jquery.min.js")
+	script(src="/js/vendor/jquery.autosize-min.js")
+	script(src="/js/vendor/iCheckbox/jquery.iCheckbox.js")
