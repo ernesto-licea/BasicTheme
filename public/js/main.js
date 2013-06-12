@@ -217,4 +217,73 @@
 			allow_single_deselect: true
 		});
 	}
+
+	/**
+	 * Notifications
+	 */
+	if ($('.cf-notify').length){
+		$('.cf-notify').click(function(){
+			that = this;
+			Messenger.options={
+				extraClasses : function(){
+					switch($(that).attr('data-placement')){
+						case 'top-center':
+							return 'messenger-fixed messenger-on-top';
+						case 'top-left':
+							return 'messenger-fixed messenger-on-top messenger-on-left';
+						case 'top-right':
+							return 'messenger-fixed messenger-on-top messenger-on-right';
+						case 'bottom-center':
+							return 'messenger-fixed messenger-on-bottom';
+						case 'bottom-left':
+							return 'messenger-fixed messenger-on-bottom messenger-on-left';
+						case 'bottom-right':
+							return 'messenger-fixed messenger-on-bottom messenger-on-right';
+						default:
+							return 'messenger-fixed messenger-on-top messenger-on-right';
+					}
+				}(),
+				theme: function(){
+					return $(that).attr('data-theme') || 'future'
+				}()
+			};
+			msg=Messenger().post({
+				message: function(){
+					return $(that).attr('data-content') || 'Empty Message'
+				}(),
+				type:function(){
+					return $(that).attr('data-type') || 'info'
+				}(),
+				showCloseButton:function(){
+					if ($(that).attr("data-close")=='false'){
+						return false;
+					}
+					return true;
+				}(),
+				hideAfter:function(){
+					return $(that).attr('data-time') || 0;
+				}(),
+				actions:function(){
+					if ($(that).attr('data-confirm') == 'true'){
+						return {
+							ok:{
+								label:'Ok',
+								action:function(){
+									msg.cancel();
+								}
+							},
+							cancel:{
+								label:'Cancel',
+								action:function(){
+									msg.cancel();
+								}
+							}
+						}
+					}
+					return false
+				}()
+			})
+
+		})
+	}
 })(jQuery);

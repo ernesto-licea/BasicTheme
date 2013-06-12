@@ -11,3 +11,10 @@
 @import "theme/styles.css";
 
 @import "vendor/html5-boilerplate-bottom.css";
+@import "vendor/messenger/messenger.css";
+@import "vendor/messenger/messenger-theme-future.css";
+@import "vendor/messenger/messenger-theme-block.css";
+@import "vendor/messenger/messenger-theme-air.css";
+@import "vendor/messenger/messenger-theme-ice.css";
+
+
